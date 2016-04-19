@@ -57,28 +57,28 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						
+
 						<li class="${current == 'index' ? 'active' :'' }"><a href="/">Home</a></li>
-						
+
 						<security:authorize access="hasRole('ROLE_ADMIN')">
 							<li class="${current == 'users' ? 'active' :'' }"><a
 								href="/users.html">Users</a></li>
 						</security:authorize>
-						
+
 						<li class="${current == 'register' ? 'active' :'' }"><a
 							href="/register.html">Register</a></li>
-						
+
 						<security:authorize access="!isAuthenticated()">
 							<li class="${current == 'login' ? 'active' :'' }"><a
 								href="/login.html">login</a></li>
 						</security:authorize>
-						
+
 						<security:authorize access="isAuthenticated()">
 							<li><a href='<spring:url value="/logout"/>'>Logout</a></li>
 							<li class="${current == 'users' ? 'active' :'' }"><a
 								href="/account.html">My Account</a></li>
 						</security:authorize>
-						
+
 					</ul>
 
 				</div>
